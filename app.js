@@ -12,4 +12,7 @@ function abc() {
   console.log("HI");
 }
 
-btn.addEventListener("click", abc());
+// btn.addEventListener("click", abc());
+
+DOMSelectors.text.style.fontSize = "5rem";
+DOMSelectors.button.style.transform = "scale(1)";
