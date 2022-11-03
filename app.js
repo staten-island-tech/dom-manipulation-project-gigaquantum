@@ -1,18 +1,11 @@
 const DOMSelectors = {
-  button: document.getElementById("btn"),
-  text: document.querySelector("#text"),
+  brand: document.getElementById(""),
+  model: document.getElementById(""),
+  year: document.getElementById(""),
+  owners: document.getElementById(""),
+  milesDriven: document.getElementById(""),
 };
 
-console.log(DOMSelectors.button);
-console.log(DOMSelectors.text);
-
-const btn = DOMSelectors.button;
-function abc() {
-  alert("Hello!");
-  console.log("HI");
-}
-
-// btn.addEventListener("click", abc());
-
-DOMSelectors.text.style.fontSize = "5rem";
-DOMSelectors.button.style.transform = "scale(1)";
+document.getElementById("btn").addEventListener("click", function () {
+  alert("Clicked!");
+});
