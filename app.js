@@ -1,11 +1,25 @@
 const DOMSelectors = {
-  brand: document.getElementById(""),
-  model: document.getElementById(""),
-  year: document.getElementById(""),
-  owners: document.getElementById(""),
-  milesDriven: document.getElementById(""),
+  brand: document.getElementById("brand"),
+  model: document.getElementById("model"),
+  year: document.getElementById("year"),
+  owners: document.getElementById("owners"),
+  milesDriven: document.getElementById("miles-driven"),
+  reset: document.getElementById("reset"),
+  submit: document.getElementById("submit"),
+  inputFields: document.querySelectorAll(".input"),
 };
 
-document.getElementById("btn").addEventListener("click", function () {
-  alert("Clicked!");
+console.log(DOMSelectors.inputFields)
+
+function resetInputs(inputArray) {
+  inputArray.forEach(element => {
+    element.value = "";
+    console.log(element)
+  });
+}
+
+function 
+
+DOMSelectors.reset.addEventListener("click", function() {
+  resetInputs(DOMSelectors.inputFields);
 });
