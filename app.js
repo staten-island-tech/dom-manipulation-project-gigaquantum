@@ -19,7 +19,7 @@ function resetInputs(inputArray) {
 }
 
 function displayResults(resultArray) {
-  resultArray.for;
+  resultArray.entries.forEach();
 }
 
 function getInfo(fetchedInfo) {
