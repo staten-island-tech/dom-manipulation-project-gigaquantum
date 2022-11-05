@@ -9,9 +9,8 @@ const DOMSelectors = {
   reset: document.getElementById("reset"),
   submit: document.getElementById("submit"),
   inputFields: document.querySelectorAll(".input"),
+  resultArea: document.querySelector(".results"),
 };
-
-console.log(DOMSelectors.inputFields);
 
 function resetInputs(inputArray) {
   inputArray.forEach((element) => {
@@ -19,33 +18,32 @@ function resetInputs(inputArray) {
   });
 }
 
-function resetResults() {
-  // Work in progress
+function displayResults(resultArray) {
+  resultArray.for;
 }
 
-/* function getInfo(fetchedInfo) {
-  const infoObj = fetchedInfo.value;
-  console.log(infoObj);
-} */
+function getInfo(fetchedInfo) {
+  const infoObj = {
+    brand: { name: fetchedInfo.brand.name, info: fetchedInfo.brand.value },
+    brand: { name: fetchedInfo.model.name, info: fetchedInfo.model.value },
+    year: { name: fetchedInfo.year.name, info: fetchedInfo.year.value },
+    owners: { name: fetchedInfo.owners.name, info: fetchedInfo.owners.value },
+    milesDriven: {
+      name: fetchedInfo.milesDriven.name,
+      info: fetchedInfo.milesDriven.value,
+    },
+  };
+  for (const [key, value] of Object.entries(infoObj)) {
+    console.log(`${key}: ${value}`);
+  }
+}
 
 DOMSelectors.reset.addEventListener("click", function () {
   resetInputs(DOMSelectors.inputFields);
 });
 
-DOMSelectors.submit.addEventListener("click", function () {
-  getInfo(DOMSelectors.inputFields);
-});
-
-/* Trying to make a function to gather any inputs
-const obj = {
-  name: "Jean-Luc Picard",
-  rank: "Captain",
-};
-
-let objTwo = {};
-
-// Prints "name Jean-Luc Picard" followed by "rank Captain"
-Object.entries(obj).forEach((entry) => {
-  objTwo.(`${entry[0]}`) = (`${entry[1]}`);
-  console.log(entry[0]);
+/* DOMSelectors.submit.addEventListener("click", function () {
+  console.log(
+    `${DOMSelectors.info.model.name}: ${DOMSelectors.info.model.value}`
+  );
 }); */

@@ -1,26 +1,62 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>DOM Manipulation</title>
-</head>
-<body>
-    <h1>Car Info Form</h1>
-    <form action="">
-        <label for="brand">Car Brand</label><br>
-        <input type="text" class="input" id="brand"><br><br>
-        <label for="model">Car Model</label><br>
-        <input type="text" class="input" id="model"><br><br>
-        <label for="year">Model Year</label><br>
-        <input type="text" class="input" id="year"><br><br>
-        <label for="owners"># of Owners</label><br>
-        <input type="text" class="input" id="owners"><br><br>
-        <label for="miles-driven"># of Miles Driven</label><br>
-        <input type="text" class="input" id="miles-driven"><br><br>
-        <button type="button" id="submit">Submit</button>
-        <button type="button" id="reset">Reset</button>
-    </form>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="survey">
+      <h1>Car Info Form</h1>
+      <form action="">
+        <br />
+        <label for="brand">Car Brand</label><br />
+        <input
+          type="text"
+          class="input"
+          id="brand"
+          name="Car Brand"
+        /><br /><br />
+        <label for="model">Car Model</label><br />
+        <input
+          type="text"
+          class="input"
+          id="model"
+          name="Car Model"
+        /><br /><br />
+        <label for="year">Model Year</label><br />
+        <input
+          type="text"
+          class="input"
+          id="year"
+          name="Model Year"
+        /><br /><br />
+        <label for="owners"># of Owners</label><br />
+        <input
+          type="text"
+          class="input"
+          id="owners"
+          name="# of Owners"
+        /><br /><br />
+        <label for="miles-driven"># of Miles Driven</label><br />
+        <input
+          type="text"
+          class="input"
+          id="miles-driven"
+          name="# of Miles Driven"
+        /><br /><br />
+        <button type="button" class="btn" id="submit">Submit</button>
+        <button type="button" class="btn" id="reset">Reset</button>
+      </form>
+    </div>
+    <div class="results"></div>
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
