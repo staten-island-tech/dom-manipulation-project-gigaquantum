@@ -62,19 +62,49 @@ h2 {
     font-size: 5rem;
     border-color: aqua;
     border-style: solid;
-    width: 40rem;
+    width: 135rem;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
 }
 
-.result-box {
+.result-card {
     background-color: burlywood;
-    border-radius: 1vw;
     color: black;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    justify-content: space-around;
+    width: 30rem;
+    font-size: 4rem;
+    border-color: cadetblue;
+    border-style: solid;
+    align-items: center;
+    height: 30rem;
 }
 
 .result-img {
-    width: 80%;
+    width: 100%;
     height: auto;
+    justify-content: flex-start;
+}
+
+
+.remove-btn {
+    background-color: orangered;
+    color:aliceblue;
+    padding: 0.6rem;
+    border-radius: 100vw;
+    width: fit-content;
+    font-size: 1.5rem;
+    
+}
+
+.remove-btn:active {
+    background-color: rgb(182, 48, 0);
+    color: bisque;
+}
+
+.card-text {
+
 }

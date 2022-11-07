@@ -17,7 +17,7 @@ function resetInputs(inputArray) {
   });
 }
 
-function addResultElement([brand, model, year, url]) {
+function addResultElement(brand, model, year, url) {
   DOMSelectors.resultArea.insertAdjacentHTML(
     "beforeend",
     `
