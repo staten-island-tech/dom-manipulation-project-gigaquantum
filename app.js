@@ -3,13 +3,12 @@ const DOMSelectors = {
     brand: document.getElementById("brand"),
     model: document.getElementById("model"),
     year: document.getElementById("year"),
-    owners: document.getElementById("owners"),
-    milesDriven: document.getElementById("miles-driven"),
+    imgURL: document.getElementById("img-url"),
   },
   reset: document.getElementById("reset"),
   submit: document.getElementById("submit"),
   inputFields: document.querySelectorAll(".input"),
-  resultArea: document.querySelector(".results"),
+  resultArea: document.querySelector(".result-bin"),
 };
 
 function resetInputs(inputArray) {
@@ -18,32 +17,39 @@ function resetInputs(inputArray) {
   });
 }
 
-function displayResults(resultArray) {
-  resultArray.entries.forEach();
+function addResultElement([brand, model, year, url]) {
+  DOMSelectors.resultArea.insertAdjacentHTML(
+    "beforeend",
+    `
+    
+    `
+  );
 }
+
+/* function displayResults(resultArray) {
+  resultArray.entries.forEach();
+} */
 
 function getInfo(fetchedInfo) {
   const infoObj = {
-    brand: { name: fetchedInfo.brand.name, info: fetchedInfo.brand.value },
-    brand: { name: fetchedInfo.model.name, info: fetchedInfo.model.value },
-    year: { name: fetchedInfo.year.name, info: fetchedInfo.year.value },
-    owners: { name: fetchedInfo.owners.name, info: fetchedInfo.owners.value },
-    milesDriven: {
-      name: fetchedInfo.milesDriven.name,
-      info: fetchedInfo.milesDriven.value,
-    },
+    brand: fetchedInfo.brand.value,
+    model: fetchedInfo.model.value,
+    year: fetchedInfo.year.value,
+    imgURL: fetchedInfo.imgURL.value,
   };
-  for (const [key, value] of Object.entries(infoObj)) {
-    console.log(`${key}: ${value}`);
-  }
+  console.log(Object.values(infoObj));
+  Object.entries(infoObj).forEach((entry) => {
+    console.log(entry[1]);
+  });
 }
 
 DOMSelectors.reset.addEventListener("click", function () {
   resetInputs(DOMSelectors.inputFields);
 });
 
-/* DOMSelectors.submit.addEventListener("click", function () {
-  console.log(
+DOMSelectors.submit.addEventListener("click", function () {
+  /* console.log(
     `${DOMSelectors.info.model.name}: ${DOMSelectors.info.model.value}`
-  );
-}); */
+  ); */
+  getInfo(DOMSelectors.info);
+});

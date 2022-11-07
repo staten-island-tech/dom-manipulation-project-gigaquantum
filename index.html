@@ -14,7 +14,7 @@
   </head>
   <body>
     <div class="survey">
-      <h1>Car Info Form</h1>
+      <h2>Car Info Form</h2>
       <form action="">
         <br />
         <label for="brand">Car Brand</label><br />
@@ -38,25 +38,24 @@
           id="year"
           name="Model Year"
         /><br /><br />
-        <label for="owners"># of Owners</label><br />
+        <label for="img-url">Image URL</label><br />
         <input
           type="text"
           class="input"
-          id="owners"
-          name="# of Owners"
-        /><br /><br />
-        <label for="miles-driven"># of Miles Driven</label><br />
-        <input
-          type="text"
-          class="input"
-          id="miles-driven"
-          name="# of Miles Driven"
+          id="img-url"
+          name="Image URL"
         /><br /><br />
         <button type="button" class="btn" id="submit">Submit</button>
         <button type="button" class="btn" id="reset">Reset</button>
       </form>
     </div>
-    <div class="results"></div>
+    <div class="result-bin">
+      <h2>Output</h2>
+      <div class="result-box">
+        <img class="result-img" src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Error: Invalid URL">
+      <p>Model Name & Year</p>
+      </div>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
