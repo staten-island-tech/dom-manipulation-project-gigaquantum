@@ -66,6 +66,7 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     padding: 1rem;
+    justify-content: space-around;
 }
 
 .result-card {
@@ -80,13 +81,13 @@ h2 {
     border-color: cadetblue;
     border-style: solid;
     align-items: center;
+    justify-items: center;
     height: 30rem;
 }
 
 .result-img {
     width: 100%;
     height: auto;
-    justify-content: flex-start;
 }
 
 
@@ -97,7 +98,6 @@ h2 {
     border-radius: 100vw;
     width: fit-content;
     font-size: 1.5rem;
-    
 }
 
 .remove-btn:active {

@@ -1,3 +1,4 @@
+let cardNum = 0;
 const DOMSelectors = {
   info: {
     brand: document.getElementById("brand"),
@@ -7,8 +8,10 @@ const DOMSelectors = {
   },
   reset: document.getElementById("reset"),
   submit: document.getElementById("submit"),
+  remove: document.querySelectorAll(".remove-btn"),
   inputFields: document.querySelectorAll(".input"),
   resultArea: document.querySelector(".result-bin"),
+  resultCard: document.querySelectorAll(".result-card"),
 };
 
 function resetInputs(inputArray) {
@@ -17,30 +20,26 @@ function resetInputs(inputArray) {
   });
 }
 
-function addResultElement(brand, model, year, url) {
+function addCard(brand, model, year, imgURL) {
+  cardNum++;
   DOMSelectors.resultArea.insertAdjacentHTML(
     "beforeend",
     `
-    
+    <div class="result-card" id="card-${cardNum}">
+        <img
+          class="result-img"
+          src="${imgURL}"
+          alt="Error: Invalid URL"
+        />
+        <p class="card-text">${year} ${brand} ${model}</p>
+        <p class="remove-btn" id="btn-${cardNum}" type="button">Remove</p>
+      </div>
     `
   );
 }
 
-/* function displayResults(resultArray) {
-  resultArray.entries.forEach();
-} */
-
-function getInfo(fetchedInfo) {
-  const infoObj = {
-    brand: fetchedInfo.brand.value,
-    model: fetchedInfo.model.value,
-    year: fetchedInfo.year.value,
-    imgURL: fetchedInfo.imgURL.value,
-  };
-  console.log(Object.values(infoObj));
-  Object.entries(infoObj).forEach((entry) => {
-    console.log(entry[1]);
-  });
+function removeCard(event) {
+  document.getElementById(event.target).remove();
 }
 
 DOMSelectors.reset.addEventListener("click", function () {
@@ -48,8 +47,11 @@ DOMSelectors.reset.addEventListener("click", function () {
 });
 
 DOMSelectors.submit.addEventListener("click", function () {
-  /* console.log(
-    `${DOMSelectors.info.model.name}: ${DOMSelectors.info.model.value}`
-  ); */
-  getInfo(DOMSelectors.info);
+  addCard(
+    DOMSelectors.info.brand.value,
+    DOMSelectors.info.model.value,
+    DOMSelectors.info.year.value,
+    DOMSelectors.info.imgURL.value
+  );
+  resetInputs(DOMSelectors.inputFields);
 });
