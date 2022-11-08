@@ -103,6 +103,7 @@ h2 {
 .remove-btn:active {
     background-color: rgb(182, 48, 0);
     color: bisque;
+    box-shadow: 0.2rem 0.2rem 0.1rem rgb(109, 96, 96);
 }
 
 .card-text {

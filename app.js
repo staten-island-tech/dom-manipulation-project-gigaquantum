@@ -55,3 +55,9 @@ DOMSelectors.submit.addEventListener("click", function () {
   );
   resetInputs(DOMSelectors.inputFields);
 });
+
+document.addEventListener("click", (element) => {
+  if (element.target.matches(".remove-btn")) {
+    document.getElementById(`card-${element.target.id.charAt(4)}`).remove();
+  }
+});
