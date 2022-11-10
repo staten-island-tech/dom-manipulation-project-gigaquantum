@@ -58,6 +58,6 @@ DOMSelectors.submit.addEventListener("click", function () {
 
 document.addEventListener("click", (element) => {
   if (element.target.matches(".remove-btn")) {
-    document.getElementById(`card-${element.target.id.charAt(4)}`).remove();
+    document.getElementById(`card-${element.target.id.substr(4)}`).remove();
   }
 });
