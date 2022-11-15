@@ -15,8 +15,6 @@ body {
     flex-wrap: wrap;
     flex-direction: row;
     font-size: 1vw;
-    width: 100vw;
-    height: 100vh;
 }
 
 h2 {
