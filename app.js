@@ -1,4 +1,3 @@
-let cardNum = 0;
 const DOMSelectors = {
   info: {
     brand: document.getElementById("brand"),
@@ -20,26 +19,34 @@ function resetInputs(inputArray) {
   });
 }
 
+function removeCard(cardSelector) {
+  cardSelector.parentElement.remove();
+}
+
 function addCard(brand, model, year, imgURL) {
-  cardNum++;
   DOMSelectors.resultArea.insertAdjacentHTML(
     "beforeend",
     `
-    <div class="result-card" id="card-${cardNum}">
+    <div class="result-card">
         <img
           class="result-img"
           src="${imgURL}"
           alt="Error: Invalid URL"
         />
         <p class="card-text">${year} ${brand} ${model}</p>
-        <p class="remove-btn" id="btn-${cardNum}" type="button">Remove</p>
+        <p class="remove-btn" type="button">Remove</p>
       </div>
     `
   );
 }
 
-function removeCard(event) {
-  document.getElementById(event.target).remove();
+// Adds event listeners for the all of the remove buttons
+function addRemoveListener(btnSelector) {
+  btnSelector.forEach((element) => {
+    element.addEventListener("click", function () {
+      removeCard(element);
+    });
+  });
 }
 
 DOMSelectors.reset.addEventListener("click", function () {
@@ -53,11 +60,6 @@ DOMSelectors.submit.addEventListener("click", function () {
     DOMSelectors.info.year.value,
     DOMSelectors.info.imgURL.value
   );
+  addRemoveListener(document.querySelectorAll(".remove-btn"));
   resetInputs(DOMSelectors.inputFields);
-});
-
-document.addEventListener("click", (element) => {
-  if (element.target.matches(".remove-btn")) {
-    document.getElementById(`card-${element.target.id.substr(4)}`).remove();
-  }
 });
